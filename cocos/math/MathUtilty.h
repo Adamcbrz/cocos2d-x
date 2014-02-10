@@ -11,8 +11,7 @@
 
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class MathUtility
 {
@@ -66,5 +65,5 @@ private:
     
 };
 
-}
+NS_CC_END
 #endif /* defined(__C3DUtilty__) */

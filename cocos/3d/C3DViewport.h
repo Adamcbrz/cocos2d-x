@@ -3,8 +3,8 @@
 
 #include "EnumDef_GL.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DCamera;
 class C3DRenderTarget;
 
@@ -40,6 +40,7 @@ public:
 	int width;
 	int height;
 };
-}
+
+NS_CC_END
 
 #endif

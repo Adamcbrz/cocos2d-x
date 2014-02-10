@@ -4,8 +4,7 @@
 #include "C3DModel.h"
 #include "C3DNode.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DMeshSkin;
 
@@ -34,6 +33,6 @@ private:
 
 };
 
-}
+NS_CC_END
 
 #endif

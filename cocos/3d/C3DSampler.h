@@ -4,7 +4,7 @@
 #include "EnumDef_GL.h"
 #include "cocos2d.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DTexture;
 class ElementNode;
@@ -17,7 +17,7 @@ class ElementNode;
 * itself, a sampler stores per-instance texture state information, such
 * as wrap and filter modes.
 */
-class C3DSampler : public cocos2d::CCObject
+class C3DSampler : public cocos2d::Object
 {
     friend class C3DTexture;
 

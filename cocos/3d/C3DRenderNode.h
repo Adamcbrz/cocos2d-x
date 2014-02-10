@@ -3,7 +3,7 @@
 
 #include <map>
 #include <string>
-#include "EnumDef.h"
+#include "EnumDef_GL.h"
 
 #include "math/Matrix.h"
 #include "math/Vector3.h"
@@ -16,7 +16,7 @@
 
 using namespace std;
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DScene;
 class C3DNode;

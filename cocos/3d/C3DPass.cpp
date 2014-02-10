@@ -9,7 +9,7 @@
 
 #include "C3DEffectManager.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DPass::C3DPass() :
 _id("")

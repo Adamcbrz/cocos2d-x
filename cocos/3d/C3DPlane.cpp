@@ -2,8 +2,8 @@
 #include "C3DPlane.h"
 #include "C3DMesh.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 float C3DPlane::s_fOnPlaneErr = 0.001f;
 
 void C3DPlane::setOnPlaneErr(float fError)
@@ -84,4 +84,5 @@ C3DPlane::POINT_CLASSIFICATION C3DPlane::pointClassify(const Vector3& point) con
 
 	return C3DPlane::ON_PLANE;
 }
-}
+
+NS_CC_END

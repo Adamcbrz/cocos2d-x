@@ -4,7 +4,7 @@
 #include "math/Vector2.h"
 #include "math/Vector3.h"
 #include "math/Vector4.h"
-#include "EnumDef.h"
+#include "EnumDef_GL.h"
 #include "C3DLayer.h"
 #include "C3DSprite.h"
 

@@ -1,7 +1,6 @@
 #include "CocosMath.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 Vector2::Vector2()
     : x(0.0f), y(0.0f)
@@ -271,4 +270,4 @@ void Vector2::subtract(const Vector2& v1, const Vector2& v2, Vector2* dst)
     dst->y = v1.y - v2.y;
 }
 
-}
+NS_CC_END

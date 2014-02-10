@@ -1,9 +1,7 @@
 
 #include "C3DActionListener.h"
 
-
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DActionEvent::C3DActionEvent(std::function<void()> listener, unsigned long eventTime)
 {
@@ -28,4 +26,4 @@ C3DActionEvent::~C3DActionEvent()
     _listener = nullptr;
 }
 
-}
+NS_CC_END

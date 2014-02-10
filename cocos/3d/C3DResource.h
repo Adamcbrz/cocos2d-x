@@ -3,15 +3,15 @@
 #include <string>
 #include "cocos2d.h"
 
-namespace cocos2d
-{
-class C3DElementNode;
+NS_CC3D_BEGIN
+
+class ElementNode;
 class C3DResourcePool;
 
 /**
 Abstract class representing a loadable resource (e.g. textures, mesh etc)
 */
-class C3DResource : public virtual cocos2d::CCObject
+class C3DResource : public virtual cocos2d::Object
 {
     friend class C3DUsedResourcePool;
     friend class C3DWaitResourcePool;
@@ -42,14 +42,14 @@ public:
     *
     * @param nodes elementnode which contains the resource info.
     */
-    virtual bool load(C3DElementNode* node);
+    virtual bool load(ElementNode* node);
 
     /**
     * save the resource info into the elementnode
     *
     * @param nodes elementnode which contains the renderstate info.
     */
-    virtual bool save(C3DElementNode* node);
+    virtual bool save(ElementNode* node);
 
     virtual void unload(){};
 
@@ -66,7 +66,7 @@ public:
 
     void setState(C3DResource::State state);
 
-    virtual void update(long elapsedTime);
+    virtual void update(float dt);
 
     /**
     * clone a material from current material.
@@ -89,6 +89,7 @@ private:
 
     int         _cloneNum;
 };
-}
+
+NS_CC_END
 
 #endif

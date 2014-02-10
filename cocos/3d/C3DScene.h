@@ -6,7 +6,7 @@
 #include "C3DNode.h"
 #include <vector>
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DCamera;
 class C3DRenderNode;
@@ -29,6 +29,7 @@ class C3DOctree;
 /**
 *Defines the scene node,which includes all the scene object,for example,light,camera,sprite,and so on.
 */
+
 class  C3DScene : public C3DNode
 {
 friend class C3DNode;
@@ -51,7 +52,7 @@ public:
     //get number of cameras in the scene
     int getCameraCount() const;
     
-    
+    C3DScene *getScene();
 
     
     /**

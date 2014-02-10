@@ -4,16 +4,16 @@
 #include "cocos3d.h"
 #include "cocos2d.h"
 
-#include "base_nodes/CCNode.h"
-#include "touch_dispatcher/CCTouchDelegateProtocol.h"
+//#include "base_nodes/CCNode.h"
+//#include "touch_dispatcher/CCTouchDelegateProtocol.h"
 
-#include "EnumDef.h"
+#include "EnumDef_GL.h"
 #include <string>
 
 #include "C3DRenderState.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DSceneNode;
 class Rectangle;
 class C3DVector4;
@@ -28,7 +28,7 @@ class C3DSpriteManager;
 *Defines the 3DLayer.
 *This class  is the 3D entry.One 3d layer have one scene.you can use 3d layer to interactive with 2d layer.
 */
-class  C3DLayer :  public cocos2d::CCLayer
+class  C3DLayer :  public cocos2d::Layer
 {  
 
 public:
@@ -42,12 +42,7 @@ public:
 
     virtual void onExit();
 
-    // optional
-    virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent){};
-    virtual void ccTouchesMoved(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent){};
-    virtual void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent){};
-    virtual void ccTouchesCancelled(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent){};
-
+    
     enum State //The game states.
     {
         UNINITIALIZED,
@@ -95,7 +90,7 @@ public:
      * 
      * @return The game main scene.
      */
-    cocos3d::C3DScene* getScene() { return _scene; };
+    C3DScene* getC3DScene() { return _scene; };
 
     void showBoundingBox(bool bShow);
 
@@ -152,5 +147,7 @@ protected:
  
     C3DSpriteManager* _spriteManager;
 };
-}
+
+NS_CC_END
+
 #endif 

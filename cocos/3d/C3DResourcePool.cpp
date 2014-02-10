@@ -2,8 +2,9 @@
 #include "C3DResource.h"
 #include "C3DResourceManager.h"
 #include "Base.h"
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
+
 C3DResourcePool::C3DResourcePool(C3DResourceManager* manager)
 {
     _manager = manager;
@@ -116,4 +117,5 @@ void C3DWaitResourcePool::update(long elapsedTime)
         }
     }
 }
-}
+
+NS_CC_END

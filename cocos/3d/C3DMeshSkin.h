@@ -5,8 +5,7 @@
 #include "Transform.h"
 #include "C3DNode.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DResourceLoader;
 class C3DModel;
@@ -90,6 +89,6 @@ Matrix _bindShape;
     unsigned int _curPartIndex;
 };
 
-}
+NS_CC_END
 
 #endif

@@ -1,8 +1,8 @@
 #include "Stream.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 #if defined(__ANDROID__)
 	extern void printError(const char* format, ...)
 	{
@@ -519,4 +519,4 @@ namespace cocos2d
 
 
 
-}
+NS_CC_END

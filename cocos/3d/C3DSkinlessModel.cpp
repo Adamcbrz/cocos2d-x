@@ -6,8 +6,7 @@
 #include "C3DMaterial.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DSkinlessModel::C3DSkinlessModel(C3DMesh* mesh) :C3DModel(mesh)   
 {
@@ -32,4 +31,4 @@ C3DModel* C3DSkinlessModel::clone(C3DNode::CloneContext& context) const
     return other;
 }
 
-}
+NS_CC_END

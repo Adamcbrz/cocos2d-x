@@ -1,14 +1,14 @@
 #ifndef CAMERA_H_
 #define CAMERA_H_
 
-#include "base/Transform.h"
+#include "Transform.h"
 #include "C3DNode.h"
 
 #include "C3DAABB.h"
 #include "C3DOBB.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DCameraNode;
 class C3DViewport;
 class Vector3;
@@ -275,6 +275,7 @@ private:
 
 	bool		_bDrawCamera;
 };
-}
+
+NS_CC_END
 
 #endif

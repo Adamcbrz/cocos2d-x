@@ -1,9 +1,10 @@
 #ifndef ANIMATIONVALUE_H_
 #define ANIMATIONVALUE_H_
 
+#include "CCPlatformMacros.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 /**
  * Defines a interface to describe the animation value.
  */
@@ -47,6 +48,6 @@ private:
 
 };
 
-}
+NS_CC_END
 
 #endif

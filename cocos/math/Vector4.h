@@ -2,8 +2,7 @@
 #define VECTOR4_H_
 #include <iostream>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class Matrix;
 
@@ -450,7 +449,7 @@ inline std::istream& operator >> (std::istream& stream, Vector4& v)
     return stream;
 }
     
-}
+NS_CC_END
 
 #include "Vector4.inl"
 

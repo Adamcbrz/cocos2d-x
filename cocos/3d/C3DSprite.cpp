@@ -23,7 +23,7 @@
 #include "C3DModelNode.h"
 
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DSprite::C3DSprite(const char* id) 
 :C3DRenderNode(id)
@@ -157,15 +157,15 @@ bool C3DSprite::loadMesh(const char* meshName)
     return false;
 }
 
-void C3DSprite::update(long elapsedTime)
+void C3DSprite::update(float dt)
 {
     if(_active == false)
         return;
 
-    C3DRenderNode::update(elapsedTime);
+    C3DRenderNode::update(dt);
 
     if(_animation != nullptr)
-        _animation ->update(elapsedTime);
+        _animation ->update(dt);
 }
 
 

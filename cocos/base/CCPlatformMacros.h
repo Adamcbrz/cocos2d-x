@@ -102,12 +102,16 @@ It's new in cocos2d-x since v0.99.5
 // namespace cocos2d {}
 #ifdef __cplusplus
     #define NS_CC_BEGIN                     namespace cocos2d {
+    #define NS_CC3D_BEGIN                   namespace cocos3d {
     #define NS_CC_END                       }
     #define USING_NS_CC                     using namespace cocos2d
+    #define USING_NC_CC3D                   using namespace cocos3d;
 #else
     #define NS_CC_BEGIN 
-    #define NS_CC_END 
+    #define NS_CC3D_BEGIN
+    #define NS_CC_END
     #define USING_NS_CC 
+    #define USING_NC_CC3D
 #endif 
 
 /** CC_PROPERTY_READONLY is used to declare a protected variable.

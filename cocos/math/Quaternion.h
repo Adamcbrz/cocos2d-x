@@ -5,8 +5,7 @@
 #include "Matrix.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class Matrix;
 
@@ -405,7 +404,7 @@ inline std::istream& operator >> (std::istream& stream, Quaternion& v)
     return stream;
 }
 
-}
+NS_CC_END
 
 #include "Quaternion.inl"
 

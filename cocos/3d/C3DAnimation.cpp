@@ -5,8 +5,7 @@
 #include "C3DAnimationChannel.h"
 #include "C3DAnimationCurve.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 
 C3DAnimation::C3DAnimation(const char* id)
@@ -508,4 +507,4 @@ void C3DAnimation::update(long elapsedTime)
         _state = IDLE;
 }
 
-}
+NS_CC_END

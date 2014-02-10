@@ -11,7 +11,7 @@
 #define RS_DEPTH_TEST 8
 #define RS_DEPTH_WRITE 16
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DStateBlock* C3DStateBlock::_defaultState = nullptr;
 

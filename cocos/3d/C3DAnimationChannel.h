@@ -1,10 +1,9 @@
 #ifndef ANIMATIONCHANNEL_H_
 #define ANIMATIONCHANNEL_H_
 
+#include "CCPlatformMacros.h"
 
-
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DAnimationCurve;
 
@@ -41,6 +40,6 @@ private:
     unsigned long _duration;              
 };
 
-}
+NS_CC_END
 
 #endif

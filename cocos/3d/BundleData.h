@@ -1,13 +1,14 @@
 #ifndef BUNDLEDATA_H_
 #define BUNDLEDATA_H_
 
+#include "CCPlatformMacros.h"
 #include <vector>
 #include "CocosMath.h"
 #include "EnumDef_GL.h"
 
-namespace cocos2d
-{
 
+NS_CC3D_BEGIN
+    
 class C3DMeshSkin;
 class MeshPartData;
 class C3DVertexFormat;
@@ -97,6 +98,9 @@ public:
     unsigned char* indexData;
 };
 
-}
+
+
+
+NS_CC_END
 
 #endif

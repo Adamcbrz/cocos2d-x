@@ -40,8 +40,7 @@
 #endif
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DAnimationCurve* C3DAnimationCurve::create(unsigned int pointCount, unsigned int componentCount)
 {
@@ -350,4 +349,4 @@ int C3DAnimationCurve::determineIndex(float time) const
         return curve;
     }
 
-}
+NS_CC_END

@@ -4,8 +4,8 @@
 
 #include<numeric>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 C3DAABB::C3DAABB()
 {
 }
@@ -229,4 +229,5 @@ void C3DAABB::transform(const Matrix& matrix)
 	_min = newMin;
 	_max = newMax;
 }
-}
+
+NS_CC_END

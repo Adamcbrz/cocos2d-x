@@ -5,8 +5,7 @@
 #include "Vector2.h"
 #include "Stream.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 	void skipWhiteSpace(Stream* stream);
 	char* trimWhiteSpace(char* str);
@@ -1098,5 +1097,4 @@ namespace cocos2d
 		return (int)_elements.size();
 	}
 
-
-}
+NS_CC_END

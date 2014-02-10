@@ -4,8 +4,7 @@
 #include "C3DNode.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DResourceLoader;
 class C3DMeshSkin;
@@ -18,7 +17,7 @@ class C3DPass;
 class C3DModel;
 
 
-class C3DModel : public cocos2d::CCObject
+class C3DModel : public cocos2d::Object
 {
     friend class C3DModelNode;
     friend class C3DMesh;
@@ -147,6 +146,6 @@ public:
     std::string _defaultMaterialName;
 };
 
-}
+NS_CC_END
 
 #endif

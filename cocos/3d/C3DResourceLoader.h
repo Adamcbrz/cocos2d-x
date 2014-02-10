@@ -3,8 +3,7 @@
 
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 
 class C3DScene;
@@ -37,7 +36,7 @@ class Stream;
 class C3DStaticObj;
 class C3DRenderNode;
 class C3DSprite;
-class C3DResourceLoader : public cocos2d::CCObject
+class C3DResourceLoader : public cocos2d::Object
 {
 friend class C3DRenderNode;
 
@@ -267,6 +266,6 @@ private:
     bool _isSkin;
 };
 
-}
+NS_CC_END
 
 #endif

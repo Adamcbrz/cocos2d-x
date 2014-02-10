@@ -3,9 +3,8 @@
 
 #include "C3DMeshSkin.h"
 
-namespace cocos2d
-{
 
+NS_CC3D_BEGIN
 
 BonePart::BonePart():
           _meshSkin(nullptr),_batchID(0),_offsetVertexIndex(0),_numVertexIndex(0)
@@ -42,4 +41,4 @@ void BonePart::setIndexData(void* indexData, unsigned int indexCount)
 
 }
 
-}
+NS_CC_END

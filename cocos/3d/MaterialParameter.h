@@ -9,7 +9,7 @@
 #include "C3DEffect.h"
 #include "cocos2d.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DSamplerCube;
 
@@ -21,7 +21,7 @@ class C3DSamplerCube;
 * of all supported types. Some types support setting by value,
 * while others only support setting by reference/pointer.
 */
-class MaterialParameter : public cocos2d::CCObject
+class MaterialParameter : public cocos2d::Object
 {
     friend class C3DRenderState;
     friend class C3DPass;
@@ -170,7 +170,7 @@ private:
     /**
     * Interface implemented by templated method bindings for simple storage and iteration.
     */
-    class MethodBinding : public cocos2d::CCObject
+    class MethodBinding : public cocos2d::Object
     {
     public:
         virtual void bindValue(C3DEffect* effect) = 0;
@@ -273,7 +273,7 @@ _parameter(param), _instance(instance), _valueMethod(valueMethod)
 }
 
 template <class ClassType, class ParameterType>
-MaterialParameter::MethodBinding* cocos2d::MaterialParameter::MethodValueBinding<ClassType, ParameterType>::clone() const
+MaterialParameter::MethodBinding* MaterialParameter::MethodValueBinding<ClassType, ParameterType>::clone() const
 {
     MethodValueBinding<ClassType, ParameterType>* other = new MethodValueBinding<ClassType, ParameterType>(_parameter, _instance, _valueMethod);
     return other;
@@ -300,7 +300,7 @@ void MaterialParameter::MethodArrayBinding<ClassType, ParameterType>::bindValue(
 }
 
 template <class ClassType, class ParameterType>
-MaterialParameter::MethodBinding* cocos2d::MaterialParameter::MethodArrayBinding<ClassType, ParameterType>::clone() const
+MaterialParameter::MethodBinding* MaterialParameter::MethodArrayBinding<ClassType, ParameterType>::clone() const
 {
     MethodArrayBinding<ClassType, ParameterType>* other = new MethodArrayBinding<ClassType, ParameterType>(_parameter, _instance, _valueMethod, _countMethod, _indexMethod);
     return other;

@@ -19,8 +19,7 @@
 #include "C3DMaterialManager.h"
 #include "C3DRenderSystem.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DModel::C3DModel(C3DMesh* mesh) :
     _mesh(mesh), _material(nullptr), _partCount(0), _partMaterials(nullptr), _node(nullptr), _wireframe(false)
@@ -452,4 +451,4 @@ void C3DModel::setDefaultMaterialName(const std::string& matName)
     _defaultMaterialName = matName;
 }
 
-}
+NS_CC_END

@@ -1,13 +1,13 @@
 #ifndef ANIMATIONCLIP_H_
 #define ANIMATIONCLIP_H_
 
+#include "CCPlatformMacros.h"
 #include <string>
 
 #include <vector>
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DAnimation;
 class AnimationValue;
@@ -17,7 +17,7 @@ class C3DActionEvent;
 /**
  * Defines the structure of an Animation to be played.
  */
-class C3DAnimationClip : public cocos2d::CCObject
+class C3DAnimationClip : public cocos2d::Object
 {
    // friend class C3DAnimationController;
     friend class C3DAnimation;
@@ -231,5 +231,6 @@ private:
   
 };
 
-}
+NS_CC_END
+
 #endif

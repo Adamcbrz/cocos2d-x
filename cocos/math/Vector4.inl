@@ -1,7 +1,6 @@
 #include "Vector4.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 inline void Vector4::add(const Vector4& v)
 {
@@ -96,4 +95,4 @@ inline const Vector4 Vector4::operator*(const Vector4& v) const
     return Vector4(x * v.x, y * v.y, z * v.z, w * v.w);
 }
 
-}
+NS_CC_END

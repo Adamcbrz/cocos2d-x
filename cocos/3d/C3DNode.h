@@ -9,7 +9,7 @@
 #include "C3DOBB.h"
 #include "C3DAABB.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 // TODO: replace below macro to class's const static member.
 // C3DNode dirty flags
@@ -32,7 +32,7 @@ class C3DOBB;
 /**
 * Defines a basic hierachial structure of transformation spaces.
 */
-class C3DNode : public Transform, public virtual cocos2d::CCObject
+class C3DNode : public Transform, public virtual cocos2d::Object
 {
     friend class C3DStaticObj;
     friend class C3DRenderNode;
@@ -166,7 +166,7 @@ public:
     /**
     * Update routine
     */
-    virtual void update(long elapsedTime);
+    virtual void update(float dt) override;
 
     virtual void draw();
 

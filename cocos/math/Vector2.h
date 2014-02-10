@@ -1,10 +1,10 @@
 #ifndef VECTOR2_H_
 #define VECTOR2_H_
 
+#include "CCPlatformMacros.h"
 #include <iostream>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class Matrix;
 
@@ -430,7 +430,7 @@ inline std::istream& operator >> (std::istream& stream, Vector2& v)
     return stream;
 }
 
-}
+NS_CC_END
 
 #include "Vector2.inl"
 

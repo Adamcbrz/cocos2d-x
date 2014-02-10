@@ -1,7 +1,6 @@
 #include "StringTool.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 StringTool::StringTool()
 {
@@ -148,8 +147,8 @@ size_t length = filepath.length();
 
 std::string StringTool::getFilePath(const std::string& filename)
 {
-    int index1 = filename.find_last_of('\\');
-    int index2 = filename.find_last_of('/');
+    int index1 = (int)filename.find_last_of('\\');
+    int index2 = (int)filename.find_last_of('/');
     int index = (index1 != -1 && index1 > index2 ? index1 : index2);
     std::string filepath = filename.substr(0,index+1);
     
@@ -169,10 +168,4 @@ void StringTool::fromString(const std::string &str, bool& b)
 }
 
 
-
-
-
-
-
-
-}
+NS_CC_END

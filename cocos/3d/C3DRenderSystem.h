@@ -3,8 +3,8 @@
 #include "EnumDef_GL.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class Rectangle;
 class Vector4;
 class C3DViewport;
@@ -15,7 +15,7 @@ class C3DMaterialManager;
 /**
 Defines the view port and clear flag
 */
-class  C3DRenderSystem : public cocos2d::CCObject
+class  C3DRenderSystem : public cocos2d::Object
 {
 	friend class C3DLayer;
 public:
@@ -39,7 +39,7 @@ public:
 	/**
 	* update routine
 	*/
-	void update(long elapsedTime);
+	void update(float dt);
 	/**
 	* Clears the specified resource buffers to the specified clear values.
 	*
@@ -80,6 +80,7 @@ protected:
 	float _clearDepth;                          // The clear depth value last used for clearing the depth buffer.
 	int _clearStencil;                          // The clear stencil value last used for clearing the stencil buffer.
 };
-}
+
+NS_CC_END
 
 #endif

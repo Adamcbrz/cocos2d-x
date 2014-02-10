@@ -10,7 +10,7 @@
 #include "C3DOBB.h"
 
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DNode::C3DNode()   
 :_scene(nullptr)
@@ -212,14 +212,14 @@ C3DNode* C3DNode::findNode(const char* id, bool recursive)
     return nullptr;
 }
 
-void C3DNode::update(long elapsedTime)
+void C3DNode::update(float dt)
 {
     size_t i;
     for (i = 0; i < _children.size(); ++i) 
     {
         C3DNode* node = _children[i];
         if(node->active())
-            node->update(elapsedTime);
+            node->update(dt);
     }
 }
 

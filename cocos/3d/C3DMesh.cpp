@@ -4,8 +4,7 @@
 #include "C3DVertexFormat.h"
 #include "C3DAABB.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DMesh::C3DMesh(C3DVertexFormat* vertexFormat) 
     : _vertexFormat(nullptr), _vertexCount(0), _vertexBuffer(0), _primitiveType(PrimitiveType_TRIANGLES), 
@@ -192,4 +191,4 @@ MeshPart* C3DMesh::getPart(unsigned int index)
     return _parts[index];
 }
 
-}
+NS_CC_END

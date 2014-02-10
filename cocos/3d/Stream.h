@@ -3,8 +3,7 @@
 
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 /**
  * Stream is an interface for reading and writing a sequence of bytes.
@@ -432,6 +431,6 @@ inline bool Stream::writeArray<std::string>(const std::vector<std::string>& valu
     return true;
 }
     
-}
+NS_CC_END
 
 #endif

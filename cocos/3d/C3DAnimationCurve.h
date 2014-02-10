@@ -1,17 +1,18 @@
 #ifndef CURVE_H_
 #define CURVE_H_
 
+#include "CCPlatformMacros.h"
 #include <vector>
 #include <map>
 #include <string>
 #include "cocos2d.h"
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
 
 /**
  * Represents an n-dimensional curve.
  */
-class C3DAnimationCurve : public cocos2d::CCObject
+class C3DAnimationCurve : public cocos2d::Object
 {
     friend class C3DAnimation;
     friend class C3DAnimationClip;   
@@ -184,7 +185,7 @@ private:
         CurvesMap _curves;
     };
 
-}
+NS_CC_END
 
 
 #endif

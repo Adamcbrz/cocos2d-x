@@ -1,11 +1,12 @@
 #ifndef C3DAABB_H_
 #define C3DAABB_H_
 
+#include "CCPlatformMacros.h"
 #include "math/Vector3.h"
 #include "math/Matrix.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DPlane;
 /**
 * Defines a class describe 3-dimensional axis-aligned bounding box.
@@ -80,6 +81,7 @@ public:
 	*/
 	void transform(const Matrix& matrix);
 };
-}
+
+NS_CC_END
 
 #endif

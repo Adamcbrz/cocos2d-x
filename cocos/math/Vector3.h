@@ -1,10 +1,10 @@
 #ifndef VECTOR3_H_
 #define VECTOR3_H_
 
+#include "CCPlatformMacros.h"
 #include <iostream>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class Matrix;
 class Quaternion;
@@ -460,7 +460,7 @@ inline std::istream& operator >> (std::istream& stream, Vector3& v)
     return stream;
 }
 
-}
+NS_CC_END
 
 #include "Vector3.inl"
 

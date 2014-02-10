@@ -1,9 +1,9 @@
 #ifndef ENUMDEF_GL_H_
 #define ENUMDEF_GL_H_
 #include "Base.h"
+#include "CCPlatformMacros.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 /**
 * Defines supported index formats.
 */
@@ -62,6 +62,6 @@ enum Texture_Wrap
     Texture_Wrap_CLAMP = GL_CLAMP_TO_EDGE
 };
 
-}
+NS_CC_END
 
 #endif

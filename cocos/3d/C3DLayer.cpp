@@ -8,7 +8,7 @@
 
 #include "C3DScene.h"
 
-#include "touch_dispatcher/CCTouch.h"
+//#include "touch_dispatcher/CCTouch.h"
 
 #include <map>
 
@@ -22,8 +22,9 @@
 GLenum __gl_error_code = GL_NO_ERROR;
 #define MATH_DEG_TO_RAD(x)          ((x) * 0.0174532925f)
 
-namespace cocos2d
-{
+USING_NS_CC;
+NS_CC3D_BEGIN
+
 static C3DLayer* __mainLayer = NULL;
 
 C3DLayer::C3DLayer()   
@@ -54,7 +55,7 @@ C3DLayer::~C3DLayer()
 
 bool C3DLayer::init()
 {
-    return CCLayer::init()  && init3D();
+    return Layer::init()  && init3D();
 }
 
 bool C3DLayer::init3D()
@@ -62,11 +63,11 @@ bool C3DLayer::init3D()
     initialize();   
         
     // Update the aspect ratio for our scene's camera to match the current device resolution 
-    cocos2d::CCSize size = cocos2d::CCDirector::sharedDirector()->getWinSize();//cocos2d::CCDirector::sharedDirector()->getWinSizeInPixels();
+    cocos2d::Size size = cocos2d::CCDirector::getInstance()->getWinSize();//cocos2d::CCDirector::sharedDirector()->getWinSizeInPixels();
     setSize(size.width, size.height);
     setPosition(size.width / 2, size.height / 2);
     // set searching path
-    cocos2d::CCFileUtils::sharedFileUtils()->addSearchPath("res");  
+    cocos2d::FileUtils::getInstance()->addSearchPath("res");
     
     _2DState = C3DStateBlock::create();
     
@@ -86,14 +87,14 @@ void C3DLayer::onEnter()
     
     this->scheduleUpdate();
 
-    CCLayer::onEnter();
+    Layer::onEnter();
 }
 
 void C3DLayer::onExit()
 {
     _scene->removeAllNode();
 
-    CCLayer::onExit();
+    Layer::onExit();
 }
 
 void C3DLayer::draw(void)
@@ -107,8 +108,9 @@ void C3DLayer::draw(void)
 
 long C3DLayer::getAbsoluteTime()
 {
-    struct cocos2d::cc_timeval now;
-    if (cocos2d::CCTime::gettimeofdayCocos2d(&now, NULL) != 0)
+    
+    struct timeval now;
+    if (gettimeofday(&now, NULL) != 0)
     {
         return 0 ;
     }
@@ -118,8 +120,8 @@ long C3DLayer::getAbsoluteTime()
 
 long C3DLayer::getGameTime()
 {
-    struct cocos2d::cc_timeval now;
-    if (cocos2d::CCTime::gettimeofdayCocos2d(&now, NULL) != 0)
+    struct timeval now;
+    if (gettimeofday(&now, NULL) != 0)
     {
         return 0 ;
     }
@@ -272,7 +274,7 @@ unsigned int C3DLayer::getHeight() const
 
 void C3DLayer::showBoundingBox(bool bShow)
 {
-    this->getScene()->showBoundingBox(bShow);
+    this->getC3DScene()->showBoundingBox(bShow);
 }
 
 C3DLayer* C3DLayer::getMainLayer()
@@ -295,4 +297,5 @@ const C3DViewport* C3DLayer::getViewport() const
 {
     return _renderSystem->getViewport();
 }
-}
+
+NS_CC_END

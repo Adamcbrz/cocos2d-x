@@ -3,8 +3,8 @@
 #include "math/Quaternion.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 #define ROTATE(a,i,j,k,l) g=a.m[i + 4 * j]; h=a.m[k + 4 * l]; a.m[i + 4 * j]=(float)(g-s*(h+g*tau)); a.m[k + 4 * l]=(float)(h+s*(g-h*tau));
 
 static Matrix _convarianceMatrix(const Vector3* aVertPos, int nVertCount)
@@ -322,4 +322,5 @@ void C3DOBB::transform(const Matrix& mat)
 
 	completeExtAxis();
 }
-}
+
+NS_CC_END

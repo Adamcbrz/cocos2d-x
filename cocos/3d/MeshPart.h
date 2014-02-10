@@ -3,8 +3,8 @@
 #include "EnumDef_GL.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DMesh;
 
 /**
@@ -67,6 +67,6 @@ private:
     bool _dynamic;
 };
 
-}
+NS_CC_END
 
 #endif

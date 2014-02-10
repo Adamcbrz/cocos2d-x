@@ -22,7 +22,7 @@
 #include "C3DSprite.h"
 #include "C3DStaticObj.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DRenderNode::C3DRenderNode(const char* id)
 :C3DNode(id)

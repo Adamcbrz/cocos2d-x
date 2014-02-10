@@ -35,7 +35,7 @@
 #endif
 
 // Print logging (implemented per platform)
-namespace cocos2d
+namespace cocos3d
 {
 extern void printError(const char* format, ...);
 }
@@ -181,7 +181,7 @@ extern void printError(const char* format, ...);
 
 
 // Hardware buffer
-namespace cocos2d
+namespace cocos3d
 {
 typedef GLint  VertexAttribute;
 typedef GLuint VertexBufferHandle;

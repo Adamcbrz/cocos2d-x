@@ -3,7 +3,7 @@
 #include "C3DEffect.h"
 #include "C3DSampler.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 MaterialParameter::MaterialParameter(const char* name)
 :_type(MaterialParameter::NONE)
@@ -40,6 +40,8 @@ void MaterialParameter::clearValue()
         case MaterialParameter::METHOD_PARAM:
             SAFE_RELEASE(_value.method);
             break;
+        default:
+            break;
         }
 
         _dynamic = false;
@@ -55,7 +57,8 @@ void MaterialParameter::clearValue()
                 const_cast<C3DSampler*>(_value.samplerValue)->release();
             }
             break;
-
+        default:
+            break;
 
         }
     }
@@ -309,6 +312,8 @@ void MaterialParameter::bind(C3DEffect* effect)
     case MaterialParameter::METHOD:
         assert(_value.method);
         _value.method->bindValue(effect);
+            break;
+    default:
         break;
     }
 }
@@ -334,6 +339,8 @@ void MaterialParameter::setParamMethonAutoUniform(C3DEffect* effect)
     case MaterialParameter::METHOD_PARAM:
         assert(_value.method);
         _value.method->bindValue(effect);
+        break;
+    default:
         break;
     }
 }
@@ -390,6 +397,8 @@ MaterialParameter* MaterialParameter::clone() const
         case METHOD_PARAM:
             other->_value.method = _value.method->clone();
             break;
+        default:
+            break;
         }
     }
     else
@@ -401,7 +410,9 @@ MaterialParameter* MaterialParameter::clone() const
             {
                 const_cast<C3DSampler*>(_value.samplerValue)->retain();
             }
-            break;        
+            break;
+        default:
+            break;
         }
     }
     return other;

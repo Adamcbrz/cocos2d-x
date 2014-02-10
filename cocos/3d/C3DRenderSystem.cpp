@@ -13,8 +13,8 @@
 #include "C3DEffectManager.h"
 #include "C3DMaterialManager.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 static C3DRenderSystem* __renderSystemInstance = nullptr;
 
 C3DRenderSystem::C3DRenderSystem()
@@ -61,7 +61,7 @@ void C3DRenderSystem::initialize()
 {
 	C3DStateBlock::initialize();
 	// initialize as window size
-	cocos2d::CCSize size = cocos2d::CCDirector::sharedDirector()->getWinSize();
+	cocos2d::Size size = cocos2d::CCDirector::getInstance()->getWinSize();
 
 	_viewport = new C3DViewport(0, 0, (int)size.width, (int)size.height);
 
@@ -104,9 +104,9 @@ RenderChannelManager* C3DRenderSystem::getRenderChannelManager() const
 	return _renderChannelManager;
 }
 
-void C3DRenderSystem::update(long elapsedTime)
+void C3DRenderSystem::update(float dt)
 {
-	C3DEffectManager::getInstance()->update(elapsedTime);
+	C3DEffectManager::getInstance()->update(dt);
 }
 
 void C3DRenderSystem::clear(ClearFlags flags, const Vector4* clearColor, float clearDepth, int clearStencil)
@@ -159,4 +159,5 @@ void C3DRenderSystem::clear(ClearFlags flags, const Vector4* clearColor, float c
 	}
 	glClear(bits);
 }
-}
+
+NS_CC_END

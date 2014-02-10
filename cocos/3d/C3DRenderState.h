@@ -6,7 +6,7 @@
 #include "cocos2d.h"
 #include "C3DRenderBlock.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 // Render state override bits
 enum
@@ -33,7 +33,7 @@ class C3DStateBlock;
 *
 * This class includes all the parameters to apply a shader at runtime.
 */
-class C3DRenderState : virtual public cocos2d::CCObject
+class C3DRenderState : virtual public cocos2d::Object
 {
     friend class C3DRenderSystem;
     friend class C3DMaterial;

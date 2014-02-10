@@ -3,8 +3,7 @@
 #include "C3DBone.h"
 #include "Vertex.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DSkeleton::C3DSkeleton()
 {
@@ -60,4 +59,4 @@ C3DSkeleton* C3DSkeleton::clone()
     return nullptr;
 }
     
-}
+NS_CC_END

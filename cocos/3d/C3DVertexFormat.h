@@ -1,9 +1,10 @@
 #ifndef VERTEXFORMAT_H_
 #define VERTEXFORMAT_H_
 
+#include "CCPlatformMacros.h"
 #include <vector>
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
 
       /**
      * Defines a set of usages for vertex elements.
@@ -101,6 +102,6 @@ private:
     unsigned int _vertexSize;
 };
 
-}
+NS_CC_END
 
 #endif

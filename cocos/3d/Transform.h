@@ -1,6 +1,7 @@
 #ifndef TRANSFORM_H_
 #define TRANSFORM_H_
 
+#include "CCPlatformMacros.h"
 #include <list>
 
 #include "../math/Vector3.h"
@@ -8,8 +9,7 @@
 #include "../math/Matrix.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 /**
  * Defines a 3-dimensional transformation.
@@ -658,6 +658,6 @@ private:
 
 };
 
-}
+NS_CC_END
 
 #endif

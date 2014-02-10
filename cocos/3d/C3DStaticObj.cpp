@@ -12,7 +12,7 @@
 #include "C3DModelNode.h"
 #include "StringTool.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DStaticObj* C3DStaticObj::create(const char* id)
 {  

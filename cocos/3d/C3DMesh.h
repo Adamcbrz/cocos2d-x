@@ -6,8 +6,7 @@
 #include "EnumDef_GL.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DVertexFormat;
 class MeshPart;
@@ -20,7 +19,7 @@ class C3DAABB;
  * Defines a mesh supporting various vertex formats and 1 or more
  * MeshPart(s) to define how the vertices are connected.
  */
-class C3DMesh : public cocos2d::CCObject
+class C3DMesh : public cocos2d::Object
 {
     friend class C3DModel;
     friend class C3DResourceLoader;
@@ -98,6 +97,6 @@ private:
 
 };
 
-}
+NS_CC_END
 
 #endif

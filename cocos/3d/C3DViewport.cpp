@@ -1,7 +1,7 @@
 #include "C3DViewport.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 C3DViewport::C3DViewport(int left, int top, int width1, int height1)
 	: x(left)
 	, y(top)
@@ -36,4 +36,5 @@ void C3DViewport::apply()
 {
 	glViewport((GLuint)x, (GLuint)y, (GLuint)width, (GLuint)height);
 }
-}
+
+NS_CC_END

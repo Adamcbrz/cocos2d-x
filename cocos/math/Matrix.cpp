@@ -4,7 +4,7 @@
 
 #define MATRIX_SIZE     ( sizeof(float) * 16 )
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 static const float MATRIX_IDENTITY[16] =
 {

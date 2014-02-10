@@ -6,16 +6,16 @@
 #include "C3DResource.h"
 #include <map>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DResource;
 class C3DResourcePool;
-class C3DElementNode;
+class ElementNode;
 
 /**
 *  managing a pool of resources of a particular type
 */
-class  C3DResourceManager : public cocos2d::CCObject
+class  C3DResourceManager : public cocos2d::Object
 {
 public:
     C3DResourceManager();
@@ -40,7 +40,7 @@ public:
     void addResource(C3DResource* res);
     void setResourceState(C3DResource* res, C3DResource::State state);
 
-    virtual void update(long elapsedTime);
+    virtual void update(float dt);
 
     virtual bool load(const std::string& name);
     virtual bool save(){ return false; }
@@ -61,6 +61,7 @@ public:
     C3DResourcePool*  _usedPool;
     C3DResourcePool*  _waitPool;
 };
-}
+
+NS_CC_END
 
 #endif

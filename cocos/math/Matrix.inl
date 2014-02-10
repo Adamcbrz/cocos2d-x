@@ -1,6 +1,6 @@
 #include "Matrix.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 inline const Matrix Matrix::operator+(const Matrix& m) const
 {

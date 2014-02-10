@@ -3,8 +3,8 @@
 
 #include "math/Vector3.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 /**
 * Defines a 3D plane.
 * a*x + b*y + c*z = d;
@@ -84,6 +84,7 @@ protected:
 
     static float s_fOnPlaneErr;
 };
-}
+
+NS_CC_END
 
 #endif

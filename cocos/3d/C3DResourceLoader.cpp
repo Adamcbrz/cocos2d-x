@@ -50,8 +50,7 @@
 // For sanity checking string reads
 #define BUNDLE_MAX_STRING_LENGTH        5000
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 
 
@@ -83,7 +82,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
     Stream* stream = StreamManager::openStream(path.c_str(), "rb");
     if (!stream)
     {        
-        WARN_VARG("Failed to open file: '%s'.", path);
+        WARN_VARG("Failed to open file: '%s'.", path.c_str());
         return nullptr;
     }
 
@@ -94,7 +93,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
 
     if (stream->read(sig, 1, 4) != 4 || memcmp(sig, identifier, 4) != 0)
     {
-        LOG_ERROR_VARG("Invalid bundle header: %s", path);
+        LOG_ERROR_VARG("Invalid bundle header: %s", path.c_str());
         SAFE_DELETE(stream);
         return nullptr;
     }
@@ -103,7 +102,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
     unsigned char ver[2];
     if (stream->read(ver, 1, 2) != 2 || ver[0] != BUNDLE_VERSION_MAJOR || ver[1] != BUNDLE_VERSION_MINOR)
     {
-        LOG_ERROR_VARG("Unsupported version (%d.%d) for bundle: %s (expected %d.%d)", (int)ver[0], (int)ver[1], path, BUNDLE_VERSION_MAJOR, BUNDLE_VERSION_MINOR);
+        LOG_ERROR_VARG("Unsupported version (%d.%d) for bundle: %s (expected %d.%d)", (int)ver[0], (int)ver[1], path.c_str(), BUNDLE_VERSION_MAJOR, BUNDLE_VERSION_MINOR);
 
         SAFE_DELETE(stream);
         return nullptr;
@@ -113,7 +112,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
     unsigned char isSkin;
     if (!stream->read(&isSkin))
     {
-        LOG_ERROR_VARG("Invalid bundle header: %s", path);
+        LOG_ERROR_VARG("Invalid bundle header: %s", path.c_str());
         return nullptr;
     }
     //........
@@ -123,7 +122,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
     if (stream->read(&refCount, 4, 1) != 1)
     {
         SAFE_DELETE(stream);
-        LOG_ERROR_VARG("Failed to read ref table for bundle '%s'.", (int)ver[0], (int)ver[1], path, BUNDLE_VERSION_MAJOR, BUNDLE_VERSION_MINOR);
+        LOG_ERROR_VARG("Failed to read ref table for bundle '%s'.", (int)ver[0], (int)ver[1], path.c_str(), BUNDLE_VERSION_MAJOR, BUNDLE_VERSION_MINOR);
 
         return nullptr;
     }
@@ -136,7 +135,7 @@ C3DResourceLoader* C3DResourceLoader::create(const std::string& path)
             stream->read(&refs[i].type, 4, 1) != 1 ||
             stream->read(&refs[i].offset, 4, 1) != 1)
         {
-            LOG_ERROR_VARG("Failed to read ref number %d for bundle '%s'.", i,path);
+            LOG_ERROR_VARG("Failed to read ref number %d for bundle '%s'.", i,path.c_str());
 
             SAFE_DELETE(stream);
             SAFE_DELETE_ARRAY(refs);
@@ -171,7 +170,7 @@ C3DResourceLoader::Reference* C3DResourceLoader::find(const std::string& id) con
 
 void C3DResourceLoader::clearLoadSession()
 {
-    for (unsigned int i = 0, count = _meshSkins->size(); i < count; ++i)
+    for (unsigned int i = 0, count = (unsigned int)_meshSkins->size(); i < count; ++i)
     {
         SAFE_DELETE((*_meshSkins)[i]);
     }
@@ -204,20 +203,20 @@ C3DResourceLoader::Reference* C3DResourceLoader::seekTo(const std::string& id, u
     Reference* ref = find(id);
     if (ref == nullptr)
     {
-        LOG_ERROR_VARG("No object with name '%s' in bundle '%s'.", id, _path.c_str());
+        LOG_ERROR_VARG("No object with name '%s' in bundle '%s'.", id.c_str(), _path.c_str());
         return nullptr;
     }
 
     if (ref->type != type)
     {
-        LOG_ERROR_VARG("Object '%s' in bundle '%s' has type %d (expected type %d).", id, _path.c_str(), (int)ref->type, (int)type);
+        LOG_ERROR_VARG("Object '%s' in bundle '%s' has type %d (expected type %d).", id.c_str(), _path.c_str(), (int)ref->type, (int)type);
         return nullptr;
     }
 
     // Seek to the offset of this object
     if (_stream->seek(ref->offset, SEEK_SET) == false)
     {
-        LOG_ERROR_VARG("Failed to seek to object '%s' in bundle '%s'.", id, _path.c_str());
+        LOG_ERROR_VARG("Failed to seek to object '%s' in bundle '%s'.", id.c_str(), _path.c_str());
         return nullptr;
     }
 
@@ -946,14 +945,14 @@ void C3DResourceLoader::readAnimationChannelData(C3DAnimation* animation, const 
     // read key times
     if (!_stream->readArray(&keyTimesCount, &keyTimes))
     {
-        LOG_ERROR_VARG("Failed to read %s for %s: %s", "keyTimes", "animation", id);
+        LOG_ERROR_VARG("Failed to read %s for %s: %s", "keyTimes", "animation", id.c_str());
         return ;
     }
     
     // read key values
     if (!_stream->readArray(&valuesCount, &values))
     {
-        LOG_ERROR_VARG("Failed to read %s for %s: %s", "values", "animation", id);
+        LOG_ERROR_VARG("Failed to read %s for %s: %s", "values", "animation", id.c_str());
         return ;
     }
     
@@ -1042,7 +1041,7 @@ C3DMesh* C3DResourceLoader::loadMesh(const std::string& id, const std::string& n
     C3DMesh* mesh = C3DMesh::createMesh(meshData->vertexFormat, meshData->vertexCount, false);
     if (mesh == nullptr)
     {
-        LOG_ERROR_VARG("Failed to create mesh: %s", id);
+        LOG_ERROR_VARG("Failed to create mesh: %s", id.c_str());
         SAFE_DELETE_ARRAY(meshData);
         return nullptr;
     }
@@ -1063,7 +1062,7 @@ C3DMesh* C3DResourceLoader::loadMesh(const std::string& id, const std::string& n
         MeshPart* part = mesh->addPart(partData->primitiveType, partData->indexFormat, partData->indexCount, false);
         if (part == nullptr)
         {
-            LOG_ERROR_VARG("Failed to create mesh part (i=%d): %s", i, id);
+            LOG_ERROR_VARG("Failed to create mesh part (i=%d): %s", i, id.c_str());
             SAFE_DELETE(meshData);
             return nullptr;
         }
@@ -1097,7 +1096,7 @@ MeshData* C3DResourceLoader::readMeshData()
         C3DVertexElements[i].size = vSize;
     }
 
-    MeshData* meshData = new cocos2d::MeshData(C3DVertexElements, C3DVertexElementCount);
+    MeshData* meshData = new MeshData(C3DVertexElements, C3DVertexElementCount);
 
     SAFE_DELETE_ARRAY(C3DVertexElements);
 
@@ -1374,4 +1373,4 @@ bool C3DResourceLoader::readAnimationCurves()
     return true;
 }
 
-}
+NS_CC_END

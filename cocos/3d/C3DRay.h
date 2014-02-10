@@ -3,8 +3,8 @@
 
 #include "math/Vector3.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DAABB;
 class C3DPlane;
 class C3DOBB;
@@ -136,6 +136,7 @@ inline const C3DRay operator*(const Matrix& matrix, const C3DRay& ray)
 	r.transform(matrix);
 	return r;
 }
-}
+
+NS_CC_END
 
 #endif

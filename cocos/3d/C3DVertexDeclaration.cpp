@@ -13,8 +13,7 @@
 #define VERTEX_ATTRIBUTE_BLENDINDICES_NAME          "a_blendIndices"
 #define VERTEX_ATTRIBUTE_TEXCOORD_PREFIX_NAME       "a_texCoord"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 static GLuint __maxVertexAttribs = 0;
 static std::vector<C3DVertexDeclaration*> __vertexAttributeBindingCache;
@@ -153,7 +152,7 @@ C3DVertexDeclaration* C3DVertexDeclaration::create(C3DMesh* mesh, const C3DVerte
     {
         const C3DVertexElement* e = vertexFormat->getElement(i);
 
-        cocos2d::VertexAttribute attrib;
+        VertexAttribute attrib;
 
         // Constructor vertex attribute name expected in shader.
         switch (e->usage)
@@ -312,4 +311,4 @@ void C3DVertexDeclaration::unbind()
     }
 }
 
-}
+NS_CC_END

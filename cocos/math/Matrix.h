@@ -5,7 +5,7 @@
 #include "Vector3.h"
 #include "Vector4.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 /**
  * Defines a 4 x 4 floating point matrix representing a 3D transformation.

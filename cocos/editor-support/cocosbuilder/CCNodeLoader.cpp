@@ -76,12 +76,12 @@ void NodeLoader::parseProperties(Node * pNode, Node * pParent, CCBReader * ccbRe
                 pNode = ccbNode->getCCBFileNode();
                 
                 // Skip properties that doesn't have a value to override
-                Array *extraPropsNames = (Array*)pNode->getUserObject();
+                __Array *extraPropsNames = (__Array*)pNode->getUserObject();
                 Object* pObj = NULL;
                 bool bFound = false;
                 CCARRAY_FOREACH(extraPropsNames, pObj)
                 {
-                    String* pStr = static_cast<String*>(pObj);
+                    __String* pStr = static_cast<__String*>(pObj);
                     if (0 == pStr->compare(propertyName.c_str()))
                     {
                         bFound = true;
@@ -93,7 +93,7 @@ void NodeLoader::parseProperties(Node * pNode, Node * pParent, CCBReader * ccbRe
         }
         else if (isExtraProp && pNode == ccbReader->getAnimationManager()->getRootNode())
         {
-            Array *extraPropsNames = static_cast<Array*>(pNode->getUserObject());
+            __Array *extraPropsNames = static_cast<__Array*>(pNode->getUserObject());
             if (! extraPropsNames)
             {
                 extraPropsNames = Array::create();

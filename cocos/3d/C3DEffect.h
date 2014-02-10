@@ -10,7 +10,7 @@
 #include "math/Matrix.h"
 #include "C3DResource.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class Uniform;
 class C3DTexture;

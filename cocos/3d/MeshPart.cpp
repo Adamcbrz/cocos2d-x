@@ -1,8 +1,7 @@
 #include "MeshPart.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 MeshPart::MeshPart() :
     _mesh(nullptr), _meshIndex(0), _primitiveType(PrimitiveType_TRIANGLES), _indexCount(0), _indexBuffer(0), _dynamic(false)
@@ -135,4 +134,4 @@ void MeshPart::setIndexData(void* indexData, unsigned int indexStart, unsigned i
     GL_ASSERT( glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0) );
 }
 
-}
+NS_CC_END

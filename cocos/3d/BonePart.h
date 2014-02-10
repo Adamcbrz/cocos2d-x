@@ -1,9 +1,10 @@
 #ifndef BONEPART_H_
 #define BONEPART_H_
 
+#include "CCPlatformMacros.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DNode;
 class C3DMeshSkin;
 
@@ -47,6 +48,6 @@ public:
 
 };
 
-}
+NS_CC_END
 
 #endif

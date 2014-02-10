@@ -8,8 +8,7 @@
 #include "AnimationValue.h"
 #include "C3DAnimationClip.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DBone::C3DBone(const char* id)
     : C3DNode(id), _jointMatrixDirty(true), _skinCount(0), _bSelect(false)/*, _animTarget(nullptr)*/
@@ -242,4 +241,4 @@ C3DNode* C3DBone::clone(C3DNode::CloneContext& context) const
 }
 
 
-}
+NS_CC_END

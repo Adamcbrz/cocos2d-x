@@ -5,8 +5,7 @@
 
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DMesh;
 class C3DEffect;
@@ -20,7 +19,7 @@ class C3DVertexFormat;
  * 2.hardware binding:VAO per VBO.which set only once when init.
  *
  */
-class C3DVertexDeclaration : public cocos2d::CCObject
+class C3DVertexDeclaration : public cocos2d::Object
 {
 public:
 
@@ -60,6 +59,6 @@ private:
     C3DEffect* _effect;
 };
 
-}
+NS_CC_END
 
 #endif

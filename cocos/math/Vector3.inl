@@ -1,7 +1,6 @@
 #include "Vector3.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 inline const Vector3 Vector3::operator+(const Vector3& v) const
 {
@@ -84,4 +83,4 @@ inline float Vector3::operator[](int index) const
     return ((float*)this)[index]; 
 }
 
-}
+NS_CC_END

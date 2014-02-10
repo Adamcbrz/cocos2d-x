@@ -1,12 +1,12 @@
 #ifndef ACTIONLISTENER_H_
 #define ACTIONLISTENER_H_
 
+#include "CCPlatformMacros.h"
 #include <vector>
 #include <stdlib.h>
 #include <functional>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DAnimation;
 class AnimationValue;
@@ -36,5 +36,7 @@ public:
     std::function<void()> _listener;        // This listener to call back when this event is triggered.
     unsigned long _eventTime;   // The time at which the listener will be called back at during the playback of the AnimationClip.
 };
-}
+
+NS_CC_END
+
 #endif

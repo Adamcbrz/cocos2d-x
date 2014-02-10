@@ -4,7 +4,7 @@
 #include<vector>
 #include "C3DRenderState.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DMaterial;
 class C3DRenderChannel;

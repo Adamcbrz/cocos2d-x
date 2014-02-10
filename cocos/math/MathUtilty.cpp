@@ -7,8 +7,7 @@
 //
 #include "CocosMath.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
     
     
 MathUtility::MathUtility(): _costab(nullptr), _sintab(nullptr)
@@ -115,4 +114,4 @@ void MathUtility::initMathUtility()
     }
 }
 
-}
+NS_CC_END

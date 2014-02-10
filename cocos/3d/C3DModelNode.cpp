@@ -18,8 +18,7 @@
 
 #include "C3DMaterialManager.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DModelNode::C3DModelNode(const std::string& id)
     : C3DNode(id.c_str()), _model(nullptr)
@@ -132,4 +131,4 @@ C3DNode* C3DModelNode::clone(CloneContext& context) const
     return other;
 }
 
-}
+NS_CC_END

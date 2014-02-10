@@ -3,8 +3,8 @@
 
 #include <map>
 #include "StringTool.h"
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
 
 	class Matrix;
 	class Vector2;
@@ -243,6 +243,6 @@ namespace cocos2d
 		std::vector<KeyValue>::const_iterator _flagsItr;
 	};
 
-}
+NS_CC_END
 
 #endif

@@ -4,8 +4,8 @@
 #include "EnumDef_GL.h"
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class Texture2D;
 class Image;
 
@@ -13,7 +13,7 @@ class Image;
 * Represents a texture.
 It wraps the cocos2d::ccTexture
 */
-class C3DTexture : public cocos2d::CCObject
+class C3DTexture : public cocos2d::Object
 {
 	friend class C3DSampler;
 
@@ -126,8 +126,9 @@ private:
 	unsigned int _height;
 	bool _mipmapped;
 
-	cocos2d::CCTexture2D * _texture;
+	cocos2d::Texture2D * _texture;
 };
-}
+
+NS_CC_END
 
 #endif

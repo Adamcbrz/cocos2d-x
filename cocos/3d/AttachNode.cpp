@@ -3,7 +3,7 @@
 #include "C3DLayer.h"
 #include "C3DScene.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 AttachNode::AttachNode( C3DNode* pNode, C3DNode* pOwner )
 {

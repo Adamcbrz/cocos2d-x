@@ -7,7 +7,7 @@
 #include "C3DRenderSystem.h"
 #include "ElementNode.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DTechnique::C3DTechnique()
     : _id(""), _material(nullptr)

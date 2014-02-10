@@ -1,7 +1,6 @@
 #include "Transform.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 Transform::Transform()
     : _matrixDirtyBits(0)
@@ -607,4 +606,4 @@ void Transform::rotateAlong(const Vector3& point, const Vector3& axis, float ang
 }
 
 
-}
+NS_CC_END

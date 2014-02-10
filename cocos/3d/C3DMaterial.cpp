@@ -1,5 +1,5 @@
 #include "C3DMaterial.h"
-#include "C3DStream.h"
+#include "Stream.h"
 #include "C3DPass.h"
 #include "ElementNode.h"
 #include "C3DTexture.h"
@@ -11,7 +11,7 @@
 #include "math/Vector4.h"
 
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DMaterial::C3DMaterial(const std::string& name)
 :C3DResource(name)
@@ -22,7 +22,7 @@ C3DMaterial::C3DMaterial(const std::string& name)
 C3DMaterial::~C3DMaterial()
 {
     // Destroy all the techniques.
-    for (unsigned int i = 0, count = _techniques.size(); i < count; ++i)
+    for (unsigned int i = 0, count = (unsigned int)_techniques.size(); i < count; ++i)
     {
         C3DTechnique* technique = _techniques[i];
         if (technique)
@@ -87,14 +87,14 @@ C3DMaterial* C3DMaterial::create(const char* vshPath, const char* fshPath, const
     // Create a new material with a single technique and pass for the given effect
     C3DMaterial* material = new C3DMaterial("");
 
-    ElementNode* tpMatNode = cocos2d::ElementNode::createEmptyNode("0", "material");
+    ElementNode* tpMatNode = ElementNode::createEmptyNode("0", "material");
     if (!tpMatNode)
-        return false;
+        return nullptr;
 
-    cocos2d::ElementNode* tpNodeTechnique = cocos2d::ElementNode::createEmptyNode("0", "technique");
+    ElementNode* tpNodeTechnique = ElementNode::createEmptyNode("0", "technique");
     tpMatNode->addChildNode(tpNodeTechnique);
 
-    cocos2d::ElementNode* tpNodePass = cocos2d::ElementNode::createEmptyNode("0", "pass");
+    ElementNode* tpNodePass = ElementNode::createEmptyNode("0", "pass");
     tpNodeTechnique->addChildNode(tpNodePass);
     tpNodePass->setElement("vertexShader", (vshPath == nullptr) ? "" : vshPath);
     tpNodePass->setElement("fragmentShader", (fshPath == nullptr) ? "" : fshPath);
@@ -111,7 +111,7 @@ C3DMaterial* C3DMaterial::create(const char* vshPath, const char* fshPath, const
 
 unsigned int C3DMaterial::getTechniqueCount() const
 {
-    return _techniques.size();
+    return (unsigned int)_techniques.size();
 }
 
 C3DTechnique* C3DMaterial::getTechnique(unsigned int index) const
@@ -123,7 +123,7 @@ C3DTechnique* C3DMaterial::getTechnique(unsigned int index) const
 
 C3DTechnique* C3DMaterial::getTechnique(const char* id) const
 {
-    for (unsigned int i = 0, count = _techniques.size(); i < count; ++i)
+    for (unsigned int i = 0, count = (unsigned int)_techniques.size(); i < count; ++i)
     {
         C3DTechnique* t = _techniques[i];
         if (strcmp(t->getId(), id) == 0)
@@ -246,7 +246,7 @@ bool C3DMaterial::load(ElementNode* materialNodes)
     C3DRenderState::load(materialNodes);
 
     // setup parameter from effect
-    for (unsigned int i = 0, count = this->_techniques.size(); i < count; ++i)
+    for (unsigned int i = 0, count = (unsigned int)this->_techniques.size(); i < count; ++i)
     {
         C3DTechnique* technique = this->_techniques[i];
         if (technique)

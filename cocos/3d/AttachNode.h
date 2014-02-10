@@ -4,7 +4,7 @@
 #include <vector>
 #include "CCPlatformMacros.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class C3DNode;
 class C3DSprite;

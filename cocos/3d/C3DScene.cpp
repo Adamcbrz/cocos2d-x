@@ -17,7 +17,7 @@
 #include "C3DRenderSystem.h"
 #include "C3DViewport.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
     
 C3DNode* C3DScene::findNode(const char* strId)
 {
@@ -86,6 +86,10 @@ C3DScene* C3DScene::createScene(C3DLayer* layer)
     return scene;
 }
 
+C3DScene* C3DScene::getScene()
+{
+    return this;
+}
 
 C3DCamera* C3DScene::getActiveCamera() const
 {

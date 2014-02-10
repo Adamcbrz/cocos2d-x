@@ -1,14 +1,13 @@
 #ifndef STRINGTOOL_H_
 #define STRINGTOOL_H_
 
+#include "CCPlatformMacros.h"
 #include <cctype>
 #include <string>
 #include <vector>
 #include <sstream>
 
-namespace cocos2d
-{
-
+NS_CC3D_BEGIN
 /**
  * StringTool is an interface for the string operating.
  */
@@ -94,6 +93,5 @@ inline void StringTool::fromString(const std::string& str, T& x)
 }
 
 
-}
-
+NS_CC_END
 #endif

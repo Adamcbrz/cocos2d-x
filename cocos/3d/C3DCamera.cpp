@@ -18,8 +18,9 @@
 #define CAMERA_DIRTY_BOUNDS 32
 #define CAMERA_DIRTY_ALL (CAMERA_DIRTY_VIEW | CAMERA_DIRTY_PROJ | CAMERA_DIRTY_VIEW_PROJ | CAMERA_DIRTY_INV_VIEW | CAMERA_DIRTY_INV_VIEW_PROJ | CAMERA_DIRTY_BOUNDS)
 
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
+
 C3DCamera::C3DCamera(const char* id)
 	:C3DNode(id),  _type(PERSPECTIVE), _fieldOfView(45.0f), _aspectRatio(0.75), _nearPlane(10.0f), _farPlane(1000.0f),
 	 _dirtyBits(CAMERA_DIRTY_ALL), _target(Vector3(0, 0, 0)), _bDrawCamera(false)
@@ -348,4 +349,5 @@ void C3DCamera::rotateZ(float angle)
 	C3DNode::rotateZ(angle);
 	_dirtyBits |= CAMERA_DIRTY_VIEW | CAMERA_DIRTY_INV_VIEW | CAMERA_DIRTY_INV_VIEW_PROJ | CAMERA_DIRTY_VIEW_PROJ | CAMERA_DIRTY_BOUNDS;
 }
-}
+
+NS_CC_END

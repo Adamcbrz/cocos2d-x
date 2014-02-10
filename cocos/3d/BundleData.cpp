@@ -22,8 +22,7 @@
     }
 #endif
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 MeshData::MeshData(C3DVertexElement* elements, unsigned int elementCount)
     : vertexFormat(nullptr), vertexCount(0), vertexData(nullptr), boundingBox(nullptr)
@@ -76,4 +75,4 @@ MeshPartData::~MeshPartData()
     SAFE_DELETE_ARRAY(indexData);
 }
 
-}
+NS_CC_END

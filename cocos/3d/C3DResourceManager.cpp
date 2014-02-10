@@ -3,8 +3,8 @@
 #include "C3DResourcePool.h"
 #include "Base.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 C3DResourceManager::C3DResourceManager() :_memoryUsage(0)
 {
     _usedPool = new C3DUsedResourcePool(this);
@@ -124,18 +124,19 @@ void C3DResourceManager::setResourceState(C3DResource* res, C3DResource::State s
     }
 }
 
-void C3DResourceManager::update(long elapsedTime)
+void C3DResourceManager::update(float dt)
 {
-    _checkTime += elapsedTime;
+    _checkTime += dt;
     if (_checkTime > _intervalCheckTime)
     {
         _checkTime = 0;
 
         if (_usedPool != NULL)
-            _usedPool->update(elapsedTime);
+            _usedPool->update(dt);
 
         if (_waitPool != NULL)
-            _waitPool->update(elapsedTime);
+            _waitPool->update(dt);
     }
 }
-}
+
+NS_CC_END

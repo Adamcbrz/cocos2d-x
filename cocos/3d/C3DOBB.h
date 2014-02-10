@@ -5,8 +5,8 @@
 #include "math/Matrix.h"
 #include "C3DAABB.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 /**
 * a class represent oriented bounding box
 */
@@ -67,6 +67,7 @@ public:
 
 	Vector3 extents; // obb length along each axis
 };
-}
+
+NS_CC_END
 
 #endif

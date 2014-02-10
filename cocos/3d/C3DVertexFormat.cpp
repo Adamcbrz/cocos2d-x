@@ -1,8 +1,8 @@
+
 #include "Base.h"
 #include "C3DVertexFormat.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN;
 
 C3DVertexFormat::C3DVertexFormat(const C3DVertexElement* elements, unsigned int elementCount)
     : _vertexSize(0)
@@ -146,4 +146,4 @@ bool C3DVertexElement::operator != (const C3DVertexElement& e) const
     return !(*this == e);
 }
 
-}
+NS_CC_END

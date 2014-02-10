@@ -1,10 +1,10 @@
 #include "C3DResource.h"
-#include "C3DElementNode.h"
+#include "ElementNode.h"
 #include "C3DResourcePool.h"
 #include "StringTool.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 C3DResource::C3DResource() : _id(""), _size(0)
 {
     _checkWaitTime = 0;
@@ -50,17 +50,17 @@ void C3DResource::setState(C3DResource::State state)
     _state = state;
 }
 
-bool C3DResource::load(C3DElementNode* node)
+bool C3DResource::load(ElementNode* node)
 {
     return false;
 }
 
-bool C3DResource::save(C3DElementNode* node)
+bool C3DResource::save(ElementNode* node)
 {
     return false;
 }
 
-void C3DResource::update(long elapsedTime)
+void C3DResource::update(float dt)
 {
     switch (_state)
     {
@@ -72,6 +72,8 @@ void C3DResource::update(long elapsedTime)
             }
         }
         break;
+        default:
+            break;
     }
 }
 
@@ -103,4 +105,5 @@ int C3DResource::getCloneNum()
 {
     return _cloneNum;
 }
-}
+
+NS_CC_END

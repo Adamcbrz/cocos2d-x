@@ -5,8 +5,8 @@
 #include "C3DOBB.h"
 #include "C3DPlane.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 C3DRay::C3DRay()
 	: _direction(0, 0, 1)
 {
@@ -195,4 +195,5 @@ void C3DRay::normalize()
 		_direction.z *= normalizeFactor;
 	}
 }
-}
+
+NS_CC_END

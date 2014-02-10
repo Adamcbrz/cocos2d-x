@@ -1,11 +1,12 @@
 #ifndef ResourcePool_H_
 #define ResourcePool_H_
 
+#include "CCPlatformMacros.h"
 #include <map>
 #include <string>
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
+
 class C3DResource;
 class C3DResourceManager;
 
@@ -45,6 +46,7 @@ public:
     C3DWaitResourcePool(C3DResourceManager* manager);
     virtual void update(long elapsedTime);
 };
-}
+
+NS_CC_END
 
 #endif

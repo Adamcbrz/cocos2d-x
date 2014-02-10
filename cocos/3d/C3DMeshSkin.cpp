@@ -7,8 +7,7 @@
 // The number of rows in each palette matrix.
 #define PALETTE_ROWS 3
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DMeshSkin::C3DMeshSkin()
     : _rootJoint(nullptr), _matrixPalette(nullptr), _model(nullptr), _partCount(0), _parts(nullptr), _curPartIndex(0)
@@ -297,4 +296,4 @@ void C3DMeshSkin::copyFrom(C3DMeshSkin* skin, C3DNode::CloneContext& context)
     
 }
 
-}
+NS_CC_END

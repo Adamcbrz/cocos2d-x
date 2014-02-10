@@ -5,14 +5,14 @@
 #include <vector>
 #include <map>
 #include <string>
-#include "EnumDef.h"
+#include "EnumDef_GL.h"
 #include "C3DNode.h"
 #include <string>
 #include "cocos2d.h"
 #include "C3DRenderNode.h"
 #include "C3DResource.h"
 
-NS_CC_BEGIN    
+NS_CC3D_BEGIN
 
 class Vector2;
 class Vector3;
@@ -63,7 +63,7 @@ public:
     *    
     * @param elapsedTime The elapsed game time.
     */    
-    void update(long elapsedTime);    
+    void update(float dt);
     
 
     /**

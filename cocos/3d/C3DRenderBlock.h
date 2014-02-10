@@ -5,7 +5,7 @@
 
 #include "cocos2d.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 
 class C3DNode;
@@ -17,7 +17,7 @@ class ElementNode;
 /**
 * Defines the render state of the graphics device.
 */
-class C3DStateBlock : public cocos2d::CCObject
+class C3DStateBlock : public cocos2d::Object
 {
     friend class C3DRenderState;       
     friend class C3DRenderSystem;

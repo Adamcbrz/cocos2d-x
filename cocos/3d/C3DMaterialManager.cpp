@@ -4,7 +4,7 @@
 #include "C3DMaterialManager.h"
 #include "ElementNode.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 static C3DMaterialManager* __materialManagerInstance = nullptr;
 

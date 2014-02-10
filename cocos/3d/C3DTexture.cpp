@@ -1,16 +1,17 @@
 #include "Base.h"
 #include "C3DTexture.h"
-#include "C3DStream.h"
+#include "Stream.h"
 #include "cocos2d.h"
 #include "CCTexture2D.h"
 #include "CCTextureCache.h"
 #include "ccUtils.h"
 
 using namespace std;
-using namespace cocos2d;
 
-namespace cocos2d
-{
+USING_NS_CC;
+
+NS_CC3D_BEGIN
+
 static std::vector<C3DTexture*> __textureCache;
 
 C3DTexture::C3DTexture() : _handle(0), _mipmapped(false), _width(0), _height(0), /*_cached(false), */_texture(nullptr)
@@ -51,7 +52,7 @@ C3DTexture* C3DTexture::create(const char* path, bool generateMipmaps)
 		}
 	}
 
-	CCTexture2D* tex = CCTextureCache::sharedTextureCache()->addImage(path);
+    cocos2d::Texture2D* tex = Director::getInstance()->getTextureCache()->addImage(path);
 	if (tex == nullptr)
 	{
 		LOG_ERROR_VARG("failed to load texture file: %s", path);
@@ -237,4 +238,5 @@ bool C3DTexture::isMipmapped() const
 	}
 	return _texture->hasMipmaps();
 }
-}
+
+NS_CC_END

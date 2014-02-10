@@ -4,7 +4,7 @@
 
 #include "C3DResourceManager.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 class ElementNode;
 class C3DEffect;

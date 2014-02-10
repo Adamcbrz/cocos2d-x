@@ -4,8 +4,7 @@
 #include "C3DModel.h"
 #include "C3DNode.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
     
 /**
  * Defines a model which doesn't have skin mesh.
@@ -24,6 +23,6 @@ public:
 
 };
 
-}
+NS_CC_END
 
 #endif

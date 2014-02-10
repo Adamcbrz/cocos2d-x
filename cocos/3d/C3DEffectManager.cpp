@@ -5,7 +5,7 @@
 #include "ElementNode.h"
 #include "StringTool.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 static C3DEffectManager* __effectManagerInstance = nullptr;
 
@@ -78,7 +78,7 @@ void C3DEffectManager::loadAllEffect(ElementNode* effectNodes)
                         flagsNode->rewind();
                         const char* defines = nullptr;
                         const char* value = nullptr;
-                        while (defines = flagsNode->getNextElement())
+                        while ((defines = flagsNode->getNextElement()))
                         {
                             value = flagsNode->getElement();
 

@@ -1,8 +1,7 @@
 #include "Base.h"
 #include "AnimationValue.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 AnimationValue::AnimationValue(unsigned int componentCount)
   : _componentCount(componentCount), _componentSize(componentCount * sizeof(float))
@@ -30,4 +29,4 @@ void AnimationValue::setFloat(unsigned int index, float value)
 }
 
 
-}
+NS_CC_END

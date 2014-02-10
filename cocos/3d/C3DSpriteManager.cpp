@@ -3,7 +3,7 @@
 #include "C3DSpriteManager.h"
 #include "StringTool.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 static C3DSpriteManager* __spriteManagerInstance = nullptr;
 

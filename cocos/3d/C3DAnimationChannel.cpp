@@ -5,8 +5,7 @@
 #include "C3DAnimationCurve.h"
 #include "C3DBone.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DAnimationChannel::C3DAnimationChannel(C3DAnimation* animation, C3DBone* bone, C3DAnimationCurve* curve, unsigned long duration)
     : _animation(animation), _bone(bone),  _curve(curve), _duration(duration)
@@ -29,4 +28,4 @@ C3DAnimationCurve* C3DAnimationChannel::getCurve() const
 }
 
 
-}
+NS_CC_END

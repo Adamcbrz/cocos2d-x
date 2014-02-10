@@ -6,8 +6,7 @@
 #include<vector>
 #include "cocos2d.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 class C3DAnimationChannel;
 class C3DAnimationClip;
@@ -19,7 +18,7 @@ class C3DBone;
 /**
  * Defines structure to describe a generic property animation.
  */
-class C3DAnimation : public cocos2d::CCObject
+class C3DAnimation : public cocos2d::Object
 {
     friend class C3DAnimationClip;
     friend class C3DBone;
@@ -260,6 +259,6 @@ private:
     
 };
 
-}
+NS_CC_END
 
 #endif

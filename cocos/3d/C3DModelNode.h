@@ -3,8 +3,8 @@
 
 #include "C3DNode.h"
 #include "cocos2d.h"
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
 
 class C3DModel;
 class C3DMaterial;
@@ -51,6 +51,6 @@ public:
     
 };
 
-}
+NS_CC_END
 
 #endif

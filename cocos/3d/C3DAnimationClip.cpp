@@ -11,8 +11,7 @@
 #include "C3DBone.h"
 
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DAnimationClip::C3DAnimationClip(const char* id, C3DAnimation* animation, unsigned long startTime, unsigned long endTime)
     : _id(id), _animation(animation), _startTime(startTime), _endTime(endTime), _duration(_endTime - _startTime), 
@@ -751,4 +750,4 @@ C3DAnimationClip* C3DAnimationClip::clone(C3DAnimation* animation)
 }
 
 
-}
+NS_CC_END

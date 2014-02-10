@@ -8,8 +8,7 @@
 #include "BonePart.h"
 #include "C3DRenderSystem.h"
 
-namespace cocos2d
-{
+NS_CC3D_BEGIN
 
 C3DSkinModel::C3DSkinModel(C3DMesh* mesh) :C3DModel(mesh),_skin(nullptr)
 {
@@ -188,4 +187,4 @@ C3DSkinModel* C3DSkinModel::clone(C3DNode::CloneContext& context) const
     return model;
 }
 
-}
+NS_CC_END

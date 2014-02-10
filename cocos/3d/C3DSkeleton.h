@@ -5,8 +5,8 @@
 #include <map>
 #include "Vector3.h"
 #include "Vector4.h"
-namespace cocos2d
-{
+
+NS_CC3D_BEGIN
 
 class C3DNode;
 class C3DAnimation;
@@ -85,9 +85,6 @@ private:
    
 };
 
-    
-
-}
-
+NS_CC_END
 
 #endif

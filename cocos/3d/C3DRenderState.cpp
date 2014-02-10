@@ -13,7 +13,7 @@
 #include "EnumDef_GL.h"
 #include "C3DSampler.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 static bool isMaterialKeyword(const char* str)
 {
@@ -282,6 +282,8 @@ void C3DRenderState::applyNodeAutoBinding(const char* uniformName, AutoBinding a
             }
         }
         break;
+    default:
+        break;
     }
 }
 
@@ -349,7 +351,7 @@ void C3DRenderState::bind(C3DPass* pass)
     // Apply parameter bindings and renderer state for the entire hierarchy, top-down.
     rs = nullptr;
     C3DEffect* effect = pass->getEffect();
-    while (rs = getTopmost(rs))
+    while ((rs = getTopmost(rs)))
     {
         for (std::list<MaterialParameter*>::iterator iter = rs->_parameters.begin();iter != rs->_parameters.end();++iter)
         {
@@ -371,7 +373,7 @@ void C3DRenderState::setParamMethonAutoUniform(C3DPass* pass)
 {
     C3DRenderState* rs = nullptr;
     C3DEffect* effect = pass->getEffect();
-    while (rs = getTopmost(rs))
+    while ((rs = getTopmost(rs)))
     {
         for (std::list<MaterialParameter*>::iterator iter = rs->_parameters.begin();iter != rs->_parameters.end();++iter)
         {
@@ -491,7 +493,7 @@ bool C3DRenderState::load(ElementNode* nodes)
     nodes->rewind();
 
     const char* name;
-    while (name = nodes->getNextElement())
+    while ((name = nodes->getNextElement()))
     {
         if (isMaterialKeyword(name))
             continue; // keyword - skip

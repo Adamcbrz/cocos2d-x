@@ -1,10 +1,10 @@
 #include "Base.h"
 #include "C3DSampler.h"
 #include "C3DTexture.h"
-#include "C3DStream.h"
+#include "Stream.h"
 #include "ElementNode.h"
 
-NS_CC_BEGIN
+NS_CC3D_BEGIN
 
 C3DSampler::C3DSampler()
 :_texture(nullptr)
